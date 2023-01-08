@@ -6,14 +6,14 @@ using Assets.Scripts;
 public class Enemy : MonoBehaviour
 {
     Stats Stats;
-    StayAtRange stayAtRange;
     DamageTextHandler dmgTextHandler;
+    BehaviourMovement behaviourMovement;
     // Start is called before the first frame update
     void Start()
     {
         dmgTextHandler = GameObject.Find("DamageTextEventHandler").GetComponent<DamageTextHandler>();
         Stats = GetComponent<Stats>();
-        stayAtRange = gameObject.AddComponent<StayAtRange>();
+        behaviourMovement = gameObject.GetComponent<BehaviourMovement>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        stayAtRange.execute();
+        behaviourMovement.execute();
     }
 
 

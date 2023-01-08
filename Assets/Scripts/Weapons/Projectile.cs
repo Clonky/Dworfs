@@ -7,11 +7,20 @@ public class Projectile : MonoBehaviour
     public int damage;
     public float speed;
     public float lifetime;
+    public GameObject Target;
     Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
-        dir = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 targetPos = Vector3.zero;
+        if (Target == null)
+        {
+            targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        } else
+        {
+            targetPos = Target.transform.position;
+        }
+        dir = targetPos - transform.position;
         dir = dir.normalized;
         dir.z = 0;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
