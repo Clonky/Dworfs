@@ -28,8 +28,8 @@ public class FloorConstructor : MonoBehaviour
     void CreateFloorTile(Vector2 position)
     {
         int angle = Random.Range(0, 3);
-        GameObject floorTile = Instantiate(new GameObject(), transform);
-        floorTile.name = position.ToString();
+        GameObject floorTile = new GameObject(position.ToString());
+        floorTile.transform.SetParent(this.transform);
         floorTile.transform.localPosition = position;
         floorTile.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle * 90f));
         floorTile.AddComponent<SpriteRenderer>();
