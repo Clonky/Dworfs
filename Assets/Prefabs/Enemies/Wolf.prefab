@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 196985705945959740}
   - component: {fileID: 196985705945959741}
   - component: {fileID: 196985705945959742}
-  - component: {fileID: -544635068206866519}
   - component: {fileID: -8714890007342833775}
   - component: {fileID: 8149296225327364318}
+  - component: {fileID: -544635068206866519}
+  - component: {fileID: 3481452491178527074}
+  - component: {fileID: 6736339414344206710}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -105,21 +107,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-544635068206866519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196985705945959743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c226b90903cb75f4db39415e1634d248, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 0
-  Speed: 0.8
-  Accel: 100
 --- !u!50 &-8714890007342833775
 Rigidbody2D:
   serializedVersion: 4
@@ -167,3 +154,44 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16755456, y: 0.09729701}
   m_EdgeRadius: 0
+--- !u!114 &-544635068206866519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196985705945959743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c226b90903cb75f4db39415e1634d248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviourMovement: {fileID: 0}
+--- !u!114 &3481452491178527074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196985705945959743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2a486fedd10454bb6f087329b567e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0.8
+  Accel: 100
+  PreferredRangeToTarget: 1
+  Health: 10
+--- !u!114 &6736339414344206710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196985705945959743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8046ad9830595904fa00100ae420e083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
