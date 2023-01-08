@@ -5,38 +5,33 @@ using Assets.Scripts;
 
 public class Enemy : MonoBehaviour
 {
-    public int Health;
-    public float Speed;
-    public float Accel;
-    GameObject Target;
-    Vector2 diretionToTarget;
-    Rigidbody2D rb;
+    Stats Stats;
+    StayAtRange stayAtRange;
     DamageTextHandler dmgTextHandler;
     // Start is called before the first frame update
     void Start()
     {
         dmgTextHandler = GameObject.Find("DamageTextEventHandler").GetComponent<DamageTextHandler>();
-        this.Target = GameObject.Find("Player");
-        this.rb = this.GetComponent<Rigidbody2D>();
+        Stats = GetComponent<Stats>();
+        stayAtRange = gameObject.AddComponent<StayAtRange>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.diretionToTarget = (Target.transform.position - this.transform.position).normalized;
     }
 
     void FixedUpdate()
     {
-        this.rb.velocity += this.diretionToTarget * Accel * Time.fixedDeltaTime;
-        this.rb.velocity = Vector2.ClampMagnitude(this.rb.velocity, this.Speed);
+        stayAtRange.execute();
     }
+
 
     public void TakeDamage(int damage) {
         DmgTxtEvent dmgEvent = new DmgTxtEvent(damage, transform.position);
         dmgTextHandler.pushEventOnStack(dmgEvent);
-        this.Health -= damage;
-        if (this.Health <= 0)
+        this.Stats.Health -= damage;
+        if (this.Stats.Health <= 0)
         {
             Destroy(this.gameObject);
         }
