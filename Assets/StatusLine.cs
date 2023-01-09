@@ -5,21 +5,21 @@ using UnityEngine.UI;
 
 public class StatusLine : MonoBehaviour
 {
-    GameObject PlayerObj;
+    Stats playerStats;
     float prevHealth;
     Text txt;
     // Start is called before the first frame update
     void Start()
     {
-        this.PlayerObj = GameObject.Find("Player");
+        playerStats = GameObject.Find("Player").GetComponent<Stats>();
         this.txt = this.GetComponent<Text>();
-        this.txt.text = "Health: " + this.PlayerObj.GetComponent<Player>().Health;
+        this.txt.text = "Health: " + playerStats.Health;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float Health = this.PlayerObj.GetComponent<Player>().Health;
+        int Health = playerStats.Health;
         if (this.prevHealth != Health)
         {
             this.txt.text = "Health: " + Health;
