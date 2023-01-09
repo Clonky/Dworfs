@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -544635068206866519}
   - component: {fileID: 3481452491178527074}
   - component: {fileID: 6736339414344206710}
+  - component: {fileID: 7223015090659808598}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -166,7 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c226b90903cb75f4db39415e1634d248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  behaviourMovement: {fileID: 0}
 --- !u!114 &3481452491178527074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,3 +195,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8046ad9830595904fa00100ae420e083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7223015090659808598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196985705945959743}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556ba6b998b8c21498c09ba5ec087378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DyingSound: {fileID: 8300000, guid: 769b07fd53151da45a3aa38f20d70497, type: 3}
