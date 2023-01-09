@@ -5,23 +5,22 @@ using UnityEngine;
 public class LevelControllerScript : MonoBehaviour
 {
     GameObject player;
-    Transform playerTransform;
     Timer spawnTimer;
     public float spawnRange;
-    public double spawnInterval;
+    public float spawnInterval;
+    public GameObject spawnCirclePrefab;
     public List<GameObject> enemyPrefabs;
 
     // Start is called before the first frame update
     void Start()
     {
-        this.player = GameObject.Find("Player");
-        this.spawnTimer = new Timer(this.spawnInterval);
+        player = GameObject.Find("Player");
+        spawnTimer = new Timer(this.spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.playerTransform = this.player.transform;
         this.spawnTimer.Elapsed += Time.deltaTime;
         if (this.spawnTimer.IsFinished()) {
             spawn();
@@ -32,8 +31,12 @@ public class LevelControllerScript : MonoBehaviour
     void spawn()
     {
         GameObject toSpawn = this.enemyPrefabs[Random.Range(0, this.enemyPrefabs.Count)];
-        GameObject currEnemy = Instantiate(toSpawn);
-        currEnemy.transform.position = PickPositionAroundPlayer();
+        GameObject spawnCircle = Instantiate(spawnCirclePrefab);
+        SpawnCircle spawnProps = spawnCircle.GetComponent<SpawnCircle>();
+        spawnProps.EnemyToSpawn = toSpawn;
+        spawnProps.TimeToSpawn = spawnInterval;
+        spawnCircle.transform.position = PickPositionAroundPlayer();
+
     }
 
     Vector3 PickPositionAroundPlayer()
