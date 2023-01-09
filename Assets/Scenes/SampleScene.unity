@@ -5281,6 +5281,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5739839503468703254, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739839503468703254, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739839503468703255, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739839503468703255, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739839503468703255, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5545516066885496413, guid: 7d109a28177b1304fb2e2cbc79e4ae76, type: 3}
     - target: {fileID: 5739839503766395556, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -5333,9 +5353,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5739839503766395577, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5739839503766395581, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8719955120977329899, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_FlipX
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5739839504498521419, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}

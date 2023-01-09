@@ -12,6 +12,23 @@ public class PlayerInput : BehaviourMovement
         animator = gameObject.GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         Stats = GetComponent<Stats>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    protected override void Update()
+    {
+        FaceInMovementDirection();
+    }
+
+    void FaceInMovementDirection()
+    {
+        if (rb.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        } else
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     public override void execute()
