@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts;
+using Assets.Scripts.Tools;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,12 +14,16 @@ public class Enemy : MonoBehaviour
     {
         dmgTextHandler = GameObject.Find("DamageTextEventHandler").GetComponent<DamageTextHandler>();
         Stats = GetComponent<Stats>();
-        behaviourMovement = gameObject.GetComponent<BehaviourMovement>();
+        behaviourMovement = GetComponent<BehaviourMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Stats.Health <= 0)
+        {
+            GetComponent<DyingBehaviour>().enabled = true;
+        }
     }
 
     void FixedUpdate()
@@ -31,9 +36,5 @@ public class Enemy : MonoBehaviour
         DmgTxtEvent dmgEvent = new DmgTxtEvent(damage, transform.position);
         dmgTextHandler.pushEventOnStack(dmgEvent);
         this.Stats.Health -= damage;
-        if (this.Stats.Health <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 }
