@@ -369,7 +369,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -1188,7 +1188,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1618,7 +1618,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -1627,7 +1627,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1644,7 +1644,7 @@ ParticleSystem:
         ctime7: 0
         atime0: 0
         atime1: 65535
-        atime2: 0
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -5080,6 +5080,35 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &75301430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5739839503766395581, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+  m_PrefabInstance: {fileID: 5739839504602549558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &75301431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75301430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc2a486fedd10454bb6f087329b567e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 1
+  Accel: 100
+  PreferredRangeToTarget: 0
+  Health: 100
+--- !u!81 &75301439
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75301430}
+  m_Enabled: 1
 --- !u!1 &600485171
 GameObject:
   m_ObjectHideFlags: 0
@@ -5226,9 +5255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRange: 0.5
-  spawnInterval: 5
+  spawnInterval: 2
+  spawnCirclePrefab: {fileID: 2289037676320091862, guid: 3039e36ad3c2c8d4d8f4447820240b1a, type: 3}
   enemyPrefabs:
   - {fileID: 196985705945959743, guid: b839f4da48c2acc4887f6a6dab7a39b4, type: 3}
+  - {fileID: 8373178889081512431, guid: 3186152d24dfd3c4d956e5c2d04d55fe, type: 3}
 --- !u!4 &2026968651
 Transform:
   m_ObjectHideFlags: 0
@@ -5250,6 +5281,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5739839503766395556, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739839503766395556, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5739839503766395576, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5298,5 +5337,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5739839504498521419, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
