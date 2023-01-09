@@ -16,5 +16,10 @@ public abstract class BehaviourMovement : MonoBehaviour
     }
 
     public abstract void execute();
+
+    public void Stop()
+    {
+        rb.velocity = Vector3.zero;
+    }
 }
 
