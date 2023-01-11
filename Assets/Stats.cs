@@ -8,4 +8,11 @@ public class Stats : MonoBehaviour
     public float Accel;
     public float PreferredRangeToTarget;
     public int Health;
+    public int lvl;
+    public int XP;
+
+    public void GainXP(int amountXP)
+    {
+        XP += amountXP;
+    }
 }
