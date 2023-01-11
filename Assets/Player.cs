@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+   
     Stats stats;
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+     
     }
 
     public void TakeDamage(int damage)
