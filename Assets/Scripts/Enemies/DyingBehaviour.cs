@@ -8,6 +8,7 @@ public class DyingBehaviour : MonoBehaviour
     public AudioClip DyingSound;
     public Timer TimeToDie;
     SpriteRenderer spriteRenderer;
+    public GameObject xpOrbPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class DyingBehaviour : MonoBehaviour
         FadeAway();
         if (TimeToDie.IsFinished())
         {
+            Instantiate(xpOrbPrefab, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
     }

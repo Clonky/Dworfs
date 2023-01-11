@@ -7,6 +7,7 @@ public class XPOrbApproach : MonoBehaviour
     public float distanceToActivate = 0.1f;
     public float maxSpeed = 1.2f;
     public int amountXP = 1;
+    public AudioClip gainXPSound;
     GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,9 @@ public class XPOrbApproach : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Player>())
         {
+            AudioSource.PlayClipAtPoint(gainXPSound, gameObject.transform.position);
             collision.gameObject.GetComponent<Stats>().GainXP(amountXP);
+            Destroy(gameObject);
         }
     }
 }

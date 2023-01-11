@@ -183,6 +183,8 @@ MonoBehaviour:
   Accel: 100
   PreferredRangeToTarget: 1
   Health: 10
+  lvl: 0
+  XP: 0
 --- !u!114 &6736339414344206710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +210,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DyingSound: {fileID: 8300000, guid: 769b07fd53151da45a3aa38f20d70497, type: 3}
+  xpOrbPrefab: {fileID: 3061919373828656597, guid: 7beac06cc7591644b8443eb695a8137a, type: 3}

@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: DyingSound
       value: 
       objectReference: {fileID: 8300000, guid: e5f004b1759683542985276cf200e867, type: 3}
+    - target: {fileID: 7223015090659808598, guid: b839f4da48c2acc4887f6a6dab7a39b4, type: 3}
+      propertyPath: xpOrbPrefab
+      value: 
+      objectReference: {fileID: 3061919373828656597, guid: 7beac06cc7591644b8443eb695a8137a, type: 3}
     - target: {fileID: 8149296225327364318, guid: b839f4da48c2acc4887f6a6dab7a39b4, type: 3}
       propertyPath: m_Size.x
       value: 0.2779039
