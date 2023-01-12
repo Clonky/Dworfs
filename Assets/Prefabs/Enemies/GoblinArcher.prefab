@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CoolDown: 2
   Projectile: {fileID: 5745949531878887480, guid: a98f4b53afc0764488f37089712db3a9, type: 3}
-  Target: {fileID: 5739839503766395581, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
+  Target: {fileID: 2359582419742522467, guid: 87f67ff66a5bf41458e4053683c12a20, type: 3}
   AttackRange: 2
 --- !u!114 &4924483249970989726
 MonoBehaviour:
@@ -107,6 +107,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 196985705945959741, guid: b839f4da48c2acc4887f6a6dab7a39b4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 196985705945959742, guid: b839f4da48c2acc4887f6a6dab7a39b4, type: 3}
       propertyPath: m_Controller
       value: 

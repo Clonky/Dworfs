@@ -5,6 +5,7 @@ using UnityEngine;
 public class FloorConstructor : MonoBehaviour
 {
     public Sprite GroundTile;
+    public Material GroundMaterial;
     public float WidthPerTile;
     // Start is called before the first frame update
     void Start()
@@ -34,5 +35,6 @@ public class FloorConstructor : MonoBehaviour
         floorTile.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle * 90f));
         floorTile.AddComponent<SpriteRenderer>();
         floorTile.GetComponent<SpriteRenderer>().sprite = GroundTile;
+        floorTile.GetComponent<SpriteRenderer>().material = GroundMaterial;
     }
 }
